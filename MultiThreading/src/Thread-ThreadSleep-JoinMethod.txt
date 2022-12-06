@@ -1,0 +1,39 @@
+Thread sleep() mathod
+----------------------
+public static void sleep(long milliSeconds) throws InterruptedException
+public static void sleep(long milliSeconds, int nanos) throws InterruptedException
+
+*It is used to put a thread to sleep for some time, so that another threads get a chance to execute.
+
+
+Note: 
+getName(): returns the string passed through constructor.
+Thread.isAlive(): status of a thread.
+Thread.currentThread.isAlive(): status of current thread.
+
+
+
+Join() method
+--------------
+
+The join method waits for a thread to terminate.
+It causes the currently running thread to stop executing.
+Until thread on which join method method is called finished its task.
+Overall. means we can finish thread and then we can start another new thread.
+
+
+join() method versions
+-----------------------
+
+1. public void join() throws InterruptedException
+2. public void join(long milliSeconds) throws InterruptedException
+3. public void join(long milliSeconds, int nanos) throws InterruptedException
+
+*The scond and third versions of join() method wait for the thread to wait for a given time before it dies.
+
+
+Problem with the simple join() method
+--------------------------------------
+It may take another thread wait for a long time till this thread get finished.
+So, we can specify some max amount that can be given to the thread with the join method
+and threads can have that given time for execution to complete.
