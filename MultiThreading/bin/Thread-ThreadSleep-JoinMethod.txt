@@ -37,3 +37,40 @@ Problem with the simple join() method
 It may take another thread wait for a long time till this thread get finished.
 So, we can specify some max amount that can be given to the thread with the join method
 and threads can have that given time for execution to complete.
+
+
+
+Daemon Thread()
+----------------
+Daemon thread in Java is a low-priority thread that runs in the background to perform tasks such as garbage collection, finalizer, etc.
+
+Properties of Java Daemon thread
+---------------------------------
+They can not prevent the JVM from exiting when all the user threads finish their execution.
+JVM terminates itself when all user threads finish their execution.
+If JVM finds a running daemon thread, it terminates the thread and, after that, shutdown it. JVM does not care whether the Daemon thread is running or not.
+It is an utmost low priority thread.
+
+Default Nature of Daemon Thread
+--------------------------------
+By default, the main thread is always non-daemon but for all the remaining threads, daemon nature will be inherited from parent to child. That is, if the parent 
+is Daemon, the child is also a Daemon and if the parent is a non-daemon, then the child is also a non-daemon.
+
+
+Methods of Daemon Thread
+-------------------------
+1. void setDaemon(boolean status)
+2. boolean isDaemon()
+
+Exceptions
+-----------
+IllegalThreadStateException: if only this thread is active.
+SecurityException: if the current thread cannot modify this thread.
+
+
+*Daemon vs. User Threads
+------------------------
+Priority: When the only remaining threads in a process are daemon threads, 
+the interpreter exits. This makes sense because when only daemon threads remain, there is no other thread for which a daemon thread can provide a service.
+Usage: Daemon thread is to provide services to user thread for background supporting task.
+
