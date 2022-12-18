@@ -4,7 +4,6 @@ public class Example2 {
             int num = arr[3]*10;
             System.out.println("This won't execute");
         } catch (ArrayIndexOutOfBoundsException e) {
-            //TODO: handle exception
             System.out.println("Exception Thrown");
             e.printStackTrace();;
         }
